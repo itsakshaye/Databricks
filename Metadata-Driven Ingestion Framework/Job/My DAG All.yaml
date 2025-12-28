@@ -1,0 +1,84 @@
+resources:
+  jobs:
+    My_DAG_All:
+      name: My DAG All
+      tasks:
+        - task_key: append_task
+          notebook_task:
+            notebook_path: /Workspace/Users/itsakshaye@gmail.com/Layer Migration Access
+            base_parameters:
+              meta_file_path: /Volumes/sample_superstore/superstore/superstore_volume/Config/append_mode.json
+              utilities_folder_path: /Volumes/sample_superstore/superstore/superstore_volume/Utilities/
+              task_sys_params_out: '{  "_workspace_id": "{{workspace.id}}",  "_workspace_url":
+                "{{workspace.url}}",  "_job_id": "{{job.id}}",  "_job_name":
+                "{{job.name}}",  "_job_run_id":
+                "{{job.run_id}}",  "_job_trigger_type":
+                "{{job.trigger.type}}",  "_job_start_time_timestamp_ms":
+                "{{job.start_time.timestamp_ms}}",  "_job_trigger_time_timestamp_ms":
+                "{{job.trigger.time.timestamp_ms}}", "_job_repair_count":
+                "{{job.repair_count}}",  "_task_name":
+                "{{task.name}}",  "_task_run_id":
+                "{{task.run_id}}",  "_task_notebook_path":
+                "{{task.notebook_path}}", "_task_execution_count":
+                "{{task.execution_count}}"}'
+            source: WORKSPACE
+        - task_key: override_task
+          notebook_task:
+            notebook_path: /Workspace/Users/itsakshaye@gmail.com/Layer Migration Access
+            base_parameters:
+              meta_file_path: /Volumes/sample_superstore/superstore/superstore_volume/Config/override_mode.json
+              utilities_folder_path: /Volumes/sample_superstore/superstore/superstore_volume/Utilities/
+              task_sys_params_out: '{  "_workspace_id": "{{workspace.id}}",  "_workspace_url":
+                "{{workspace.url}}",  "_job_id": "{{job.id}}",  "_job_name":
+                "{{job.name}}",  "_job_run_id":
+                "{{job.run_id}}",  "_job_trigger_type":
+                "{{job.trigger.type}}",  "_job_start_time_timestamp_ms":
+                "{{job.start_time.timestamp_ms}}",  "_job_trigger_time_timestamp_ms":
+                "{{job.trigger.time.timestamp_ms}}", "_job_repair_count":
+                "{{job.repair_count}}",  "_task_name":
+                "{{task.name}}",  "_task_run_id":
+                "{{task.run_id}}",  "_task_notebook_path":
+                "{{task.notebook_path}}", "_task_execution_count":
+                "{{task.execution_count}}"}'
+            source: WORKSPACE
+        - task_key: scd1_task
+          notebook_task:
+            notebook_path: /Workspace/Users/itsakshaye@gmail.com/Layer Migration Access
+            base_parameters:
+              meta_file_path: /Volumes/sample_superstore/superstore/superstore_volume/Config/scd1_mode.json
+              utilities_folder_path: /Volumes/sample_superstore/superstore/superstore_volume/Utilities/
+              task_sys_params_out: '{  "_workspace_id": "{{workspace.id}}",  "_workspace_url":
+                "{{workspace.url}}",  "_job_id": "{{job.id}}",  "_job_name":
+                "{{job.name}}",  "_job_run_id":
+                "{{job.run_id}}",  "_job_trigger_type":
+                "{{job.trigger.type}}",  "_job_start_time_timestamp_ms":
+                "{{job.start_time.timestamp_ms}}",  "_job_trigger_time_timestamp_ms":
+                "{{job.trigger.time.timestamp_ms}}", "_job_repair_count":
+                "{{job.repair_count}}",  "_task_name":
+                "{{task.name}}",  "_task_run_id":
+                "{{task.run_id}}",  "_task_notebook_path":
+                "{{task.notebook_path}}", "_task_execution_count":
+                "{{task.execution_count}}"}'
+            source: WORKSPACE
+        - task_key: scd2_task
+          notebook_task:
+            notebook_path: /Workspace/Users/itsakshaye@gmail.com/Layer Migration Access
+            base_parameters:
+              meta_file_path: /Volumes/sample_superstore/superstore/superstore_volume/Config/scd2_mode.json
+              utilities_folder_path: /Volumes/sample_superstore/superstore/superstore_volume/Utilities/
+              task_sys_params_out: '{  "_workspace_id": "{{workspace.id}}",  "_workspace_url":
+                "{{workspace.url}}",  "_job_id": "{{job.id}}",  "_job_name":
+                "{{job.name}}",  "_job_run_id":
+                "{{job.run_id}}",  "_job_trigger_type":
+                "{{job.trigger.type}}",  "_job_start_time_timestamp_ms":
+                "{{job.start_time.timestamp_ms}}",  "_job_trigger_time_timestamp_ms":
+                "{{job.trigger.time.timestamp_ms}}", "_job_repair_count":
+                "{{job.repair_count}}",  "_task_name":
+                "{{task.name}}",  "_task_run_id":
+                "{{task.run_id}}",  "_task_notebook_path":
+                "{{task.notebook_path}}", "_task_execution_count":
+                "{{task.execution_count}}"}'
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED

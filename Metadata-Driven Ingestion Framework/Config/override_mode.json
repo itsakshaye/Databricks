@@ -1,0 +1,28 @@
+{
+  "data_flow_id": "people_bronze_to_silver",
+  "source_details": {
+    "table_name": "sample_superstore.superstore.src_people",
+    "except_column_list": [
+      "LOAD_DTE"
+    ],
+    "transform_column_list": [
+      "concat(region,' ',person) as composite_key"
+    ]
+  },
+  "target_details": {
+    "table_name": "superstore_silver.silver.people_override",
+    "column_list": [
+      "composite_key",
+      "region",
+      "person"
+    ],
+    "key_column_list": [
+      "region"
+    ],
+    "sequence_by_column_list": [
+      "LOAD_DTE"
+    ],
+    "operation_column": "OPERATION_FLG",
+    "stored_as_type": "OVERRIDE"
+  }
+}

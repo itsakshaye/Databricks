@@ -1,0 +1,37 @@
+{
+  "data_flow_id": "people_bronze_to_silver",
+  "source_details": {
+    "table_name": "sample_superstore.superstore.src_people",
+    "except_column_list": [
+      "LOAD_DTE"
+    ],
+    "transform_column_list": [
+      "concat(region,' ',person) as composite_key",
+      "1 AS ID"
+    ],
+    "where_clause": null,
+    "watermark_column": "LOAD_DTE"
+  },
+  "target_details": {
+    "table_name": "superstore_silver.silver.people_scd2",
+    "column_list": [
+      "composite_key",
+      "region",
+      "person"
+    ],
+    "key_column_list": [
+      "region"
+    ],
+    "sequence_by_column_list": [
+      "LOAD_DTE"
+    ],
+    "operation_column": "OPERATION_FLG",
+    "track_history_column_list": [
+      "person"
+    ],
+    "track_history_except_column_list": [],
+    "stored_as_type": "SCD2",
+    "where_clause": null,
+    "watermark_column": "__MERGE_UPDATE_TS"
+  }
+}
