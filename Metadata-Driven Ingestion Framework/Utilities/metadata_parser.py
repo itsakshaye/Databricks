@@ -81,8 +81,7 @@ class MetadataParser:
             "target_details.where_clause",
             "target_details.watermark_column",
             "target_details.track_history_column_list",
-            "target_details.track_history_except_column_list",
-            "target_details.apply_as_soft_delete"
+            "target_details.track_history_except_column_list"
         ]
 
     def validate_metadata_config(
@@ -307,4 +306,5 @@ class MetadataParser:
             return parsed_dict
         except Exception as e:
             logger.error(f"Error occurred while parsing the metadata:\n{e}")
+
             raise
