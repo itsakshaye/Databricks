@@ -29,7 +29,7 @@ class GenericUtils:
             f"{f', {delimiter}, '.join(coalesce_cast)}, "
             f"'{delimiter}')"
         )
-        return f"HASH({concat_expr})"
+        return f"XXHASH64({concat_expr})"
 
     @staticmethod
     def array_to_comma_separated(
@@ -308,3 +308,4 @@ class MetadataParser:
             logger.error(f"Error occurred while parsing the metadata:\n{e}")
 
             raise
+
